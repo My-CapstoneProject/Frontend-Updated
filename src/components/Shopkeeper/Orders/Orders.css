@@ -1,0 +1,57 @@
+.orders-page {
+  padding: 2rem;
+  background: var(--background-default);
+}
+
+.orders-header {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.orders-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--divider);
+}
+
+th {
+  background: var(--background-default);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+.status.pending {
+  background: var(--warning-light);
+  color: var(--warning-main);
+}
+
+.status.completed {
+  background: var(--success-light);
+  color: var(--success-main);
+}
+
+.status.cancelled {
+  background: var(--error-light);
+  color: var(--error-main);
+} 
