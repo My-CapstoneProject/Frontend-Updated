@@ -1,0 +1,74 @@
+.stores-page {
+  padding: 2rem;
+  background: var(--background-default);
+}
+
+.page-header {
+  background: #292929;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-header h1 {
+  color: #ffffff;
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.stores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.store-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.store-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.store-info {
+  margin-bottom: 1rem;
+}
+
+.store-info p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.store-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+.status.active {
+  background: var(--success-light);
+  color: var(--success-main);
+}
+
+.status.inactive {
+  background: var(--error-light);
+  color: var(--error-main);
+} 

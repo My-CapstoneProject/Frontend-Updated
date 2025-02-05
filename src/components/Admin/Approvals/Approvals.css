@@ -1,0 +1,133 @@
+.approvals-page {
+  padding: 1rem;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-header h1 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.filter-select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--divider);
+  color: var(--text-secondary);
+  background: var(--background-paper);
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.approvals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+.approval-card {
+  background: var(--background-paper);
+  border-radius: 12px;
+  border: 1px solid var(--divider);
+  overflow: hidden;
+}
+
+.approval-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--divider);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.approval-header h3 {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+.status.pending {
+  background: var(--blue-50);
+  color: var(--primary-main);
+}
+
+.status.approved {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.status.rejected {
+  background: var(--error-light);
+  color: var(--error);
+}
+
+.approval-content {
+  padding: 1rem;
+}
+
+.info-group {
+  margin-bottom: 1rem;
+}
+
+.info-group:last-child {
+  margin-bottom: 0;
+}
+
+.info-group label {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.info-group p {
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.approval-actions {
+  padding: 1rem;
+  border-top: 1px solid var(--divider);
+  display: flex;
+  gap: 1rem;
+}
+
+.approve-btn,
+.reject-btn,
+.view-details-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+}
+
+.approve-btn i,
+.reject-btn i,
+.view-details-btn i {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .approvals-grid {
+    grid-template-columns: 1fr;
+  }
+} 
