@@ -4,14 +4,32 @@
 }
 
 .inventory-header {
-  background: white;
+ /* background: white;
   padding: 1.5rem;
   border-radius: 12px;
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); */
+
+  margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+    animation: gradientShift 10s ease infinite;
+}
+
+.inventory-header h1 {
+  color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .add-btn {
@@ -47,11 +65,14 @@
 .item-info h3 {
   margin-bottom: 0.5rem;
   color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .item-info p {
   color: var(--text-secondary);
   margin-bottom: 0.25rem;
+  font-size: 0.875rem;
 }
 
 .item-actions {

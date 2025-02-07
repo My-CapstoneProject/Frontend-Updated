@@ -4,11 +4,22 @@
 }
 
 .orders-header {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  padding: 2rem;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+  animation: gradientShift 10s ease infinite;
+}
+
+.orders-header h1 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .orders-table {
@@ -33,6 +44,12 @@ th {
   background: var(--background-default);
   font-weight: 500;
   color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+td {
+  font-size: 1rem;
+  color: var(--text-primary);
 }
 
 .status {
@@ -54,4 +71,159 @@ th {
 .status.cancelled {
   background: var(--error-light);
   color: var(--error-main);
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.error-message {
+  text-align: center;
+  padding: 2rem;
+  color: var(--error-main);
+  font-size: 1rem;
+  background: var(--error-light);
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+.no-orders {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 2rem !important;
+}
+
+.view-btn {
+  padding: 0.5rem 1rem;
+  background: var(--primary-main);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.view-btn:hover {
+  background: var(--primary-dark);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--divider);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: var(--text-primary);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.detail-row .label {
+  width: 120px;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.detail-row .value {
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.order-items {
+  margin-top: 2rem;
+}
+
+.order-items h3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.order-summary {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--divider);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  color: var(--text-secondary);
+}
+
+.summary-row.total {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.125rem;
+  border-top: 1px solid var(--divider);
+  margin-top: 0.5rem;
+  padding-top: 1rem;
 } 
