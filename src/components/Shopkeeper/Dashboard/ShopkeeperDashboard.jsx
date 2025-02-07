@@ -1,13 +1,34 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import "./ShopkeeperDashboard.css";
 
 const ShopkeeperDashboard = () => {
+  const [orderCount, setOrderCount] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  const fetchOrderCount = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:8060/api/orders/howmanyorders"
+      );
+      setOrderCount(response.data);
+    } catch (err) {
+      console.error("Error fetching order count:", err);
+      setOrderCount(0);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchOrderCount();
+  }, []);
+
   return (
     <div className="shopkeeper-dashboard">
       <div className="dashboard-header">
         <h1>Store Dashboard</h1>
-        <div className="date-display">
-          {new Date().toLocaleDateString()}
-        </div>
+        <div className="date-display">{new Date().toLocaleDateString()}</div>
       </div>
 
       <div className="stats-grid">
@@ -17,7 +38,7 @@ const ShopkeeperDashboard = () => {
           </div>
           <div className="stat-info">
             <h3>Today's Orders</h3>
-            <p>25</p>
+            <p>{loading ? "Loading..." : orderCount}</p>
           </div>
         </div>
 
@@ -27,7 +48,7 @@ const ShopkeeperDashboard = () => {
           </div>
           <div className="stat-info">
             <h3>Today's Revenue</h3>
-            <p>$1,234</p>
+            <p>1,234</p>
           </div>
         </div>
 
@@ -36,46 +57,13 @@ const ShopkeeperDashboard = () => {
             <i className="material-icons">inventory_2</i>
           </div>
           <div className="stat-info">
-            <h3>Low Stock Items</h3>
+            <h3>Products in Inventory</h3>
             <p>5</p>
           </div>
-        </div>
-      </div>
-
-      <div className="recent-orders">
-        <h2>Recent Orders</h2>
-        <div className="orders-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Order ID</th>
-                <th>Time</th>
-                <th>Customer</th>
-                <th>Amount</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>#1234</td>
-                <td>10:30 AM</td>
-                <td>John Doe</td>
-                <td>$99.99</td>
-                <td><span className="status pending">Pending</span></td>
-              </tr>
-              <tr>
-                <td>#1235</td>
-                <td>11:45 AM</td>
-                <td>Jane Smith</td>
-                <td>$149.99</td>
-                <td><span className="status completed">Completed</span></td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </div>
     </div>
   );
 };
 
-export default ShopkeeperDashboard; 
+export default ShopkeeperDashboard;
